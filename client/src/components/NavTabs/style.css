@@ -1,0 +1,67 @@
+/* Navbar */
+.universal-nav{
+    
+    background-color: #424242;
+    padding: 10px ;
+}
+
+/* Nav Links */
+
+.pacify{
+    padding:20px;
+    padding-left: 20px;
+    color: #daecff !important;
+}
+
+.add{
+    padding:20px;
+    color: #6fb5ff !important;
+}
+.add:hover{
+    background-color: #287ffa;
+    box-shadow: 4px 4px 40px 12px  rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
+}
+
+.cal{
+    padding:20px; 
+    color: #6fb5ff;
+ }
+.cal:hover{
+    background-color: #287ffa;
+    box-shadow: 4px 4px 40px 12px  white;
+    color: white;
+}
+
+.addncon{
+    padding:20px; 
+    color: #6fb5ff;
+ }
+.addncon:hover{
+    background-color: #287ffa;
+    box-shadow: 4px 4px 40px 12px  rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.addngrp{
+    padding: 20px; 
+    color: #6fb5ff;
+     }
+.addngrp:hover{
+    background-color: #287ffa;
+    box-shadow: 4px 4px 40px 12px  white;
+    color: white;
+}
+
+.groups{
+    padding: 20px; 
+    color: #6fb5ff;
+     }
+
+.groups:hover{
+    background-color: #287ffa;
+    box-shadow: 4px 4px 40px 12px  white;
+    color: white;
+}
+
+

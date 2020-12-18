@@ -1,0 +1,17 @@
+/////////////FIX GROUPS///////////////
+Logout
+
+Need render via state:
+Create Group
+Delete Group
+Make delete group api call in page: groups.js // instead of component: groupscomp
+
+//
+Why is Link not working in addressgrouplist? Have to use redirect?
+//
+After saving a group, the page needs to be refreshed before group will populate and sometimes doesn't populate until you create an additional group.
+It's like it's one step behind.
+//
+
+
+
