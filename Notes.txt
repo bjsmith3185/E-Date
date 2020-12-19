@@ -1,0 +1,23 @@
+
+Project Notes:
+
+Structure
+
+server.js, starts service
+
+Routes directory
+-contains index file
+-directory for unique api's,  ex: api will contain a js file for each unique route for this service
+
+Service directory
+- contains js files for each service in the Project
+- seperation of concerns. there will be a js file for calendar, contacts, etc
+- these file will contain all the logic needed to process each request
+
+Models directory
+- js file for each model/table for sql db
+ 
+
+
+
+
