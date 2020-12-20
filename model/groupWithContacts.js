@@ -1,14 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-  var AssociatedGroup = sequelize.define("AssociatedGroup", {
+  var GroupWithContacts = sequelize.define("GroupWithContacts", {
     id: {type:DataTypes.INTEGER,primaryKey: true, autoIncrement: true}
   });
 
-  Contact.belongsToMany(Group, { through: AssociatedGroup, foreignKey: 'id_contact' });
-  Group.belongsToMany(Contact, { through: AssociatedGroup, foreignKey: 'id_group' });
+  Contacts.belongsToMany(Groups, { through: AssociatedGroup, foreignKey: 'id_contact' });
+  Groups.belongsToMany(Contacts, { through: AssociatedGroup, foreignKey: 'id_group' });
 
 
 
-  return AssociatedGroup;
+  return GroupWithContacts;
 };
 
 

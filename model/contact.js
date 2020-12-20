@@ -1,7 +1,7 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-    var Contact = sequelize.define("Contact", {
+    var Contacts = sequelize.define("Contacts", {
       id: {type:DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
@@ -18,5 +18,5 @@ module.exports = function(sequelize, DataTypes) {
 
   //  Contact.hasMany(Group, { foreignKey: 'id' });
 
-    return Groups;
+    return Contacts;
   };
