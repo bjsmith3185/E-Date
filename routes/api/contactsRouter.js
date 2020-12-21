@@ -32,14 +32,14 @@ router.route("/")
   // Update Contact by ID
   router.route("/:id")
   .put((req,res) => {
-    console.log("updating contact with id: " + req.params.id);
+      console.log("updating contact with id: " + req.params.id);
     res.send("you updated contact with id: " + req.params.id);
   });
 
     // Delete Contact by ID
     router.route("/:id")
     .delete((req,res) => {
-      console.log("deleting contact with id: " + req.params.id);
+        console.log("deleting contact with id: " + req.params.id);
       res.send("you deleted contact with id: " + req.params.id);
     });
 

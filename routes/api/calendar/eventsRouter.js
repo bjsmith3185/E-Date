@@ -34,8 +34,8 @@ router.route("/:id")
 //Delete Event by ID
 router.route("/:id")
     .delete((req, res) => {
-        console.log("deleting event with id: " + req.params.id);
-        console.log("you deleted event with id: " + req.params.id);
+            console.log("deleting event with id: " + req.params.id);
+        res.send("you deleted event with id: " + req.params.id);
     });
 
 module.exports = router;
