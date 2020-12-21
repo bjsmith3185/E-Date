@@ -26,7 +26,7 @@ router.route("/")
   // Get contact by ID
   router.route("/:id")   
   .get((req, res) => {
-      console.log("in the get contact by ID route");
+      console.log("in the get contact by ID route"+ req.params.id);
     res.json({"request":"you requested contact by id: " + req.params.id});
   });
 

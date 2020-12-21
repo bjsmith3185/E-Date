@@ -7,13 +7,13 @@ async function addGroup(groupObj) {
     return group;
   }
 
-  async function joinContactToGroup(contactId, groupId) {
-    // find the user & project
-    const contact = await Contact.findOne({ where: { id: contactId } });
-    const group = await Group.findOne({ where: { id: groupId } });
-    // add project and user to the join table with the custom method:
-    group.addContact(contact);
-  }
+  // async function joinContactToGroup(contactId, groupId) {
+  //   // find the user & project
+  //   const contact = await Contact.findOne({ where: { id: contactId } });
+  //   const group = await Group.findOne({ where: { id: groupId } });
+  //   // add project and user to the join table with the custom method:
+  //   group.addContact(contact);
+  // }
 
 
 
