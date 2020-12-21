@@ -24,5 +24,3 @@ Models directory
 
 How to do an update (put) = ID and body? or just body?
 
-
-
