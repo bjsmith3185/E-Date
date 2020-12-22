@@ -55,8 +55,34 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    User.associate = model => {
+        User.hasMany(model.Event, {
+            foreignKey: {
+                allowNull: false
+            },
+            onDelete: "cascade"
+        });
+        User.hasMany(model.Contact, {
+            foreignKey: {
+                allowNull: false
+            },
+            onDelete: "cascade"
+        });
+        User.hasMany(model.Group, {
+            foreignKey: {
+                allowNull: false
+            },
+            onDelete: "cascade"
+        });
+        User.hasMany(model.GroupWithContacts, {
+            foreignKey: {
+                allowNull: false
+            },
+            onDelete: "cascade"
+        });
+    };
 
-
+    
     // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
     User.prototype.validPassword = function (password) {
         return bcrypt.compareSync(password, this.password);
