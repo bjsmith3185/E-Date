@@ -5,31 +5,34 @@
 const Contact = require("./model");
 
 module.exports = function (app) {
-  //Add Contact
-  async function addContact(contactObj) {
-    // create the contact
-    const contact = await Contact.createContact(contactObj);
-    return contact;
-  }
-  //Get Contact By ID
-  async function getContact(id) {
-    const contact = await Contact.getContact(id);
-    return contact;
-  }
-  //Get All Contacts
+  // Get All Contacts
   async function getAllContacts() {
     const contacts = await Contact.getAllContacts();
     return contacts;
   }
-  //Delete Contact
-  async function deleteContact(id) {
-    const contact = await Contact.removeContact(id);
+  //Add Contact
+  async function addContact(contactObj) {
+    const contact = await Contact.createContact(contactObj);
     return contact;
   }
-  //Edit Contact
-  async function editContact(id, body) {
-    //research this method
-    const contact = await Contact.createContact(id);
+  // Get Contact By ID
+  async function getContact(id) {
+    const contact = await Contact.getContact(id);
+    return contact;
+  }
+  // Edit Contact
+  async function editContact(id, { body }) {
+    // research this method
+    const contact = await Contact.create(id, { body }, {
+      where: { id: req.body.id }
+    });
+    return contact;
+  }
+  // Delete Contact
+  async function deleteContact(id, { body }) {
+    const contact = await Contact.destroy(id, { body }, {
+      where: { id: req.body.id }
+    });
     return contact;
   }
 };

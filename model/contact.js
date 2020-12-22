@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     zipCode: DataTypes.STRING,
     phone: DataTypes.STRING,
     email: DataTypes.STRING,
-    birthday: DataTypes.DATE,
+    birthday: DataTypes.DATEONLY,
     notes: DataTypes.STRING
   });
 

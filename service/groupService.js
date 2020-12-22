@@ -1,12 +1,36 @@
 const Group = require("./model");
 
-
-async function addGroup(groupObj) {
-  // create the group
-  const group = await Group.create(groupObj);
-  return group;
-}
-
+module.exports = function (app) {
+  // Get All Groups
+  async function getAllGroups() {
+    const groups = await Group.getAllGroups();
+    return groups;
+  }
+  // Add Group
+  async function addGroup(groupObj) {
+    const group = await Group.create(groupObj);
+    return group;
+  }
+  // Get Group by ID
+  async function getGroup(id) {
+    const group = await Group.getGroup(id);
+    return group;
+  }
+  // Update Group
+  async function editGroup(id, { body }) {
+    const group = await Group.update(id, { body }, {
+      where: { id: req.body.id }
+    });
+    return group;
+  }
+  // Delete Group
+  async function deleteGroup(id, { body }) {
+    const group = await Group.destroy(id, { body }, {
+      where: { id: req.body.id }
+    });
+    return group;
+  }
+};
   // async function joinContactToGroup(contactId, groupId) {
   //   // find the user & project
   //   const contact = await Contact.findOne({ where: { id: contactId } });
