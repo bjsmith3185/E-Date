@@ -1,11 +1,16 @@
-module.exports = function(sequelize, DataTypes) {
-    var Groups = sequelize.define("Groups", {
-      id: {type:DataTypes.INTEGER,primaryKey: true, autoIncrement: true},
-      groupName: DataTypes.STRING
+module.exports = function (sequelize, DataTypes) {
+  var Group = sequelize.define("Group", {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    groupName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  });
+
+    Group.hasOne(model.GroupWithContacts, {
+      onDelete: "cascade"
     });
-
-    // Groups.belongsTo(Contacts, { foreignKey: 'id_contact' });
-    // Contacts.hasMany(Groups, { foreignKey: 'id_contact' });
-
-    return Groups;
   };
+
+  return Group;
+};

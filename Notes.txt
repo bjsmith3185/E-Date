@@ -24,5 +24,6 @@ Models directory
 
 How to do an update (put) = ID and body? or just body?
 
-
+-Group and GroupWithContacts share groupName in model
+    -With foreign key does the same groupName translate to both tables?
 
