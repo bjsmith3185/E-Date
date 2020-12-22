@@ -1,11 +1,11 @@
 const { findAllByTestId } = require("@testing-library/react");
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const GroupWithContacts = sequelize.define("GroupWithContacts", {
-    id: {type:DataTypes.INTEGER,primaryKey: true, autoIncrement: true},
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     groupName: {
-    type: DataTypes.STRING,
-    allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
 

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const contactRouter = require("./contactsRouter");
 const groupRouter = require("./groupsRouter");
+const eventsRouter = require("./calendar/eventsRouter");
 
 // Route used to CRUD contacts
 router.use("/contacts", contactRouter);
@@ -9,23 +10,8 @@ router.use("/contacts", contactRouter);
 router.use("/groups", groupRouter);
 
 
-// Future routes, each part of the project should have a specific route
-
-
-
-
-
-
+// Route used to CRUD events for Calendar
+router.use("/calendar", eventsRouter);
 
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-

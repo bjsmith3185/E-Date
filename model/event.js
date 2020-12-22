@@ -1,8 +1,8 @@
 //Events table
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Event = sequelize.define("Event", {
-        id: {type:DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
         eventName: {
             type: DataTypes.STRING,
             allowNull: false

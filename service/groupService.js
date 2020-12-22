@@ -2,10 +2,10 @@ const Group = require("./model");
 
 
 async function addGroup(groupObj) {
-    // create the group
-    const group = await Group.create(groupObj);
-    return group;
-  }
+  // create the group
+  const group = await Group.create(groupObj);
+  return group;
+}
 
   // async function joinContactToGroup(contactId, groupId) {
   //   // find the user & project
@@ -25,7 +25,7 @@ async function addGroup(groupObj) {
 //     // set the user (project manager) foreign key
 //     project.setUser(user);
 //   }
-  
+
 
 // project.getUsers()
 // project.countUsers()

@@ -147,7 +147,7 @@ module.exports = function (app) {
   app.get("/api/addressbook", function (req, res) {
     if (req.user) {
       console.log("Add address 2")
-      db.Address.findAll({ where: { userId: req.user.id } ,order: [['lastName', 'ASC']]})
+      db.Address.findAll({ where: { userId: req.user.id }, order: [['lastName', 'ASC']] })
         .then((result) => {
           // console.log(result);
           res.json(result);
@@ -221,7 +221,7 @@ module.exports = function (app) {
 
   app.get("/api/addressbook3", function (req, res) {
     if (req.user) {
-      db.Address.findAll({ where: { userId: req.user.id }, attributes: ['firstName', 'middleInitial', 'lastName', 'address', 'city', 'state', 'zipCode'] , order: [['lastName', 'ASC']] })
+      db.Address.findAll({ where: { userId: req.user.id }, attributes: ['firstName', 'middleInitial', 'lastName', 'address', 'city', 'state', 'zipCode'], order: [['lastName', 'ASC']] })
         .then((result) => {
           res.json(result);
         })
@@ -234,7 +234,7 @@ module.exports = function (app) {
   app.get("/api/createGroup", function (req, res) {
     if (req.user) {
 
-      db.Address.findAll({ where: { userId: req.user.id } ,order: [['lastName', 'ASC']]})
+      db.Address.findAll({ where: { userId: req.user.id }, order: [['lastName', 'ASC']] })
         .then((result) => {
           // console.log(result);
           res.json(result);
@@ -314,7 +314,7 @@ module.exports = function (app) {
   app.get("/api/getContacts", function (req, res) {
     if (req.user) {
       console.log("Add address 2")
-      db.Address.findAll({ where: { userId: req.user.id },attributes: ['firstName','lastName', 'middleInitial','address','city','state','zipCode','phone','email','birthday','comments','userId'],order: [['lastName', 'ASC']] })
+      db.Address.findAll({ where: { userId: req.user.id }, attributes: ['firstName', 'lastName', 'middleInitial', 'address', 'city', 'state', 'zipCode', 'phone', 'email', 'birthday', 'comments', 'userId'], order: [['lastName', 'ASC']] })
         .then((result) => {
           // console.log(result);
           res.json(result);
@@ -328,10 +328,10 @@ module.exports = function (app) {
 
   app.get("/api/getGroupNames", function (req, res) {
     if (req.user) {
-     
+
       db.GroupName.findAll({
         limit: 1,
-        order: [ [ 'updatedAt', 'DESC' ]]
+        order: [['updatedAt', 'DESC']]
       })
         .then((result) => {
           // console.log(result);
@@ -346,7 +346,7 @@ module.exports = function (app) {
   app.get("/api/getGroup", function (req, res) {
     if (req.user) {
 
-      db.GroupName.findAll({ where: { userId: req.user.id },order: [['groupName', 'ASC']] })
+      db.GroupName.findAll({ where: { userId: req.user.id }, order: [['groupName', 'ASC']] })
         .then((result) => {
           // console.log(result);
           res.json(result);
