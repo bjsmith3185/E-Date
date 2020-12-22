@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
   Group.hasOne(model.GroupWithContacts, {
     onDelete: "cascade"
   });
-};
+
 
 return Group;
 };
