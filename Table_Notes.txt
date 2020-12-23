@@ -1,0 +1,52 @@
+
+Tables used with this service.
+
+
+1) Contact
+
+    id: int  (primary key)
+    firstName: string
+    lastName: string
+    middleInitial: string
+    address: string
+    city: string
+    state: string
+    zipCode: string
+    phone: string
+    email: string
+    birthday: string
+    notes: string
+
+2) Group 
+
+    id: int  (primary key)
+    groupName: string
+
+
+3) GroupWithContact 
+
+    id: int  (primary key)
+    groupId: int  (foreign key)
+    contactId: int  (foreign key)
+
+
+4) Event  
+
+
+
+
+5) User 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
