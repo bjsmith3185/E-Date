@@ -2,7 +2,7 @@
 // // Access to the db model
 // var db = require("../model");
 
-const Contact = require("./model");
+const Contact = require("../../../model");
 
 module.exports = function (app) {
   // Get All Contacts

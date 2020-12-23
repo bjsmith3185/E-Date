@@ -1,4 +1,4 @@
-const { findAllByTestId } = require("@testing-library/react");
+// const { findAllByTestId } = require("@testing-library/react");
 
 module.exports = function (sequelize, DataTypes) {
   const GroupWithContact = sequelize.define("GroupWithContact", {

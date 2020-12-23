@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const contactDb = require("../../../service/contacts/dbConnection/contactDb");
 
 // Contacts routes
 // the path for this module: http://localhost:3001/api/contacts
@@ -7,10 +8,19 @@ const router = require("express").Router();
 
 
 // Get all contacts route
+// http://localhost:3001/api/contacts/
 router.route("/")
   .get((req, res) => {
     console.log("in the get contacts route");
-    res.json({ "request": "you requested all contacts" });
+    // here we call the file that will access the Contacts table
+    // this is found in service/contacts/dbConnection/contactDb.js
+    // above we required the file and saved it as the constant contactDb
+    const contactList = contactDb.getAllContacts();
+    console.log("This is the list of contacts returned from the database");
+    console.log(contactList);
+    res.send(contactList);
+
+    // res.json({ "request": "you requested all contacts" });
   });
 
 

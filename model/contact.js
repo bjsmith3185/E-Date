@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Contact.associate = model => {
-    Contact.belongsTo(model.GroupWithContacts, {
+    Contact.belongsTo(model.GroupWithContact, {
       foreignKey: {
         allowNull: false
       }
