@@ -1,7 +1,7 @@
 const { findAllByTestId } = require("@testing-library/react");
 
 module.exports = function (sequelize, DataTypes) {
-  const GroupWithContacts = sequelize.define("GroupWithContacts", {
+  const GroupWithContact = sequelize.define("GroupWithContact", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     groupName: {
       type: DataTypes.STRING,
@@ -9,19 +9,19 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  GroupWithContacts.associate = model => {
-    GroupWithContacts.belongsTo(model.Group, {
+  GroupWithContact.associate = model => {
+    GroupWithContact.belongsTo(model.Group, {
       foreignKey: {
         allowNull: false
       }
     });
 
-    GroupWithContacts.hasMany(model.Contact, {
+    GroupWithContact.hasMany(model.Contact, {
       onDelete: "cascade"
     });
   };
 
-  return GroupWithContacts;
+  return GroupWithContact;
 };
 
 

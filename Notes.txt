@@ -27,3 +27,23 @@ How to do an update (put) = ID and body? or just body?
 -Group and GroupWithContacts share groupName in model
     -With foreign key does the same groupName translate to both tables?
 
+
+
+
+Logic Notes
+
+* Contact can be created with or without a group.
+* Contact can belong to multiple groups.
+* Group can be created without and contacts.
+* New Contact and new Group can be created in the same request.
+* If a Contact is removed it must also be removed from all associated Groups.
+* Group can be deleted without deleting the Contact.
+
+
+
+
+
+
+
+
+
