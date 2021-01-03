@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const contactDb = require("../../../service/contacts/dbConnection/contactDb");
+//const contactDb = require("../../../service/contacts/dbConnection/contactDb");
+const contactDb = require("../../../service/contacts/dbConnection/contactDb")
 
 // Contacts routes
 // the path for this module: http://localhost:3001/api/contacts
@@ -29,7 +30,15 @@ router.route("/")
   .post((req, res) => {
     console.log("this is the contact we want to add");
     console.log(req.body);
-    res.send({ "response": req.body })
+    // inport service/contacts/dbConnections/contactDB.js
+    // this next line will put the contact into the database
+    const contact = contactDb.addContact(req.body);
+
+    console.log("contact response from database");
+    console.log(contact);
+
+    // return the contact from the database to the front end
+    res.send(contact);
   });
 
 // Get contact by ID

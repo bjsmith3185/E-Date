@@ -1,0 +1,23 @@
+
+
+Object to return from all REST calls
+
+{
+    status: String, 200, 400
+
+    response: []  arrayList
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
