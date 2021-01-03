@@ -1,6 +1,4 @@
 
-// // Access to the db model
-// var db = require("../model");
 
 const Contact = require("../../../model");
 
@@ -12,7 +10,7 @@ module.exports = function (app) {
   }
   //Add Contact
   async function addContact(contactObj) {
-    const contact = await Contact.createContact(contactObj);
+    const contact = await Contact.create(contactObj);
     return contact;
   }
   // Get Contact By ID
