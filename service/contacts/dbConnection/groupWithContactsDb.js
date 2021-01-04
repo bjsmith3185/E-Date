@@ -1,6 +1,6 @@
 const GroupWithContact = require("./model");
 
-module.exports = function (app) {
+module.exports = function () {
   // Get All GroupsWithContact
   async function getAllGroupsWithContact() {
     const groupWithContact = await GroupWithContact.getAllGroups();

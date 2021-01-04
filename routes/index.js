@@ -1,11 +1,24 @@
 const path = require("path");
 const router = require("express").Router();
-const apiRoutes = require("./api");
 const healthCheckRoute = require("./healthCheck");
+const contacts = require("./contacts/contactsRouter");
+const groups = require("./contacts/groupsRouter");
+const groupWithContacts = require("./contacts/groupWithContactRouter");
+const calendar = require("./calendar/eventsRouter");
 
 // API Routes
-router.use("/api", apiRoutes);
 
+// Route for Contact CRUD
+router.use("/api/contacts", contacts);
+// Route for Group CRUD
+router.use("/api/groups", groups);
+// Route for GroupWithContact CRUD
+router.use("/api/groupwithcontact", groupWithContacts);
+
+// Route for Calendar CRUD
+router.use("/api/calendar", calendar);
+
+// Route for healthCheck
 router.use("/", healthCheckRoute);
 
 

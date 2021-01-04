@@ -1,7 +1,7 @@
 // const router = require("express").Router();
-// const calendarRouter = require("./calendarRouter");
+// const eventsRouter = require("./eventsRouter");
 
 // // Route used to CRUD events for Calendar
-// router.use("/calendar", calendarRouter);
+// router.use("/calendar", eventsRouter);
 
 // module.exports = router;

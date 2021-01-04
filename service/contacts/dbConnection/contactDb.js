@@ -1,18 +1,18 @@
 const Contact = require("../../../model");
-const contactObj = {
-  firstName: req.body.firstName,
-  lastName: req.body.lastName,
-  middleInitial: req.body.middleInitial,
-  address: req.body.address,
-  phone: req.body.phone,
-  email: req.body.email,
-  birthday: req.body.birthday,
-  comments: req.body.comments,
-  city: req.body.city,
-  state: req.body.state,
-  zipCode: req.body.zipCode,
-  userId: req.body.userId
-};
+// const contactObj = {
+//   firstName: req.body.firstName,
+//   lastName: req.body.lastName,
+//   middleInitial: req.body.middleInitial,
+//   address: req.body.address,
+//   phone: req.body.phone,
+//   email: req.body.email,
+//   birthday: req.body.birthday,
+//   comments: req.body.comments,
+//   city: req.body.city,
+//   state: req.body.state,
+//   zipCode: req.body.zipCode,
+//   userId: req.body.userId
+// };
 
 module.exports = function () {
   // Get All Contacts

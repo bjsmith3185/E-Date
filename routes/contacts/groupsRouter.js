@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const groupDb = require("../../../service/contacts/dbConnection/groupDb");
+const groupDb = require("../../service/contacts/dbConnection/groupDb");
 
 // Groupss routes
 // the path for this module: http://localhost:3001/api/groups
