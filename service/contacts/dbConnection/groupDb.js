@@ -1,9 +1,12 @@
-const Group = require("./model");
+const Group = require("../../../model");
+const groupObj = {
+  groupName: req.body.groupName
+}
 
-module.exports = function (app) {
+module.exports = function () {
   // Get All Groups
   async function getAllGroups() {
-    const groups = await Group.getAllGroups();
+    const groups = await Group.findAll();
     return groups;
   }
   // Add Group
@@ -13,13 +16,15 @@ module.exports = function (app) {
   }
   // Get Group by ID
   async function getGroup(id) {
-    const group = await Group.getGroup(id);
+    const group = await Group.findAll({
+      where: { id: req.params.id }
+    });
     return group;
   }
   // Update Group
   async function editGroup(id, { body }) {
-    const group = await Group.update(id, { body }, {
-      where: { id: req.body.id }
+    const group = await Group.update({ body }, {
+      where: { id: req.params.id }
     });
     return group;
   }
