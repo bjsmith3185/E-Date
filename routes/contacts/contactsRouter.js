@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const contactDb = require("../../../service/contacts/dbConnection/contactDb");
+const contactDb = require("../../service/contacts/dbConnection/contactDb");
 
 // Contacts routes
 // the path for this module: http://localhost:3001/api/contacts

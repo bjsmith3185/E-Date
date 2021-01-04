@@ -1,13 +1,13 @@
 const Event = require("../../../model");
-const eventObj = {
-    title: DataTypes.STRING,
-    startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE,
-    startTime: DataTypes.TIME,
-    endTime: DataTypes.TIME,
-    notes: DataTypes.STRING,
-    userId: DataTypes.INTEGER
-};
+// const eventObj = {
+//     title: DataTypes.STRING,
+//     startDate: DataTypes.DATE,
+//     endDate: DataTypes.DATE,
+//     startTime: DataTypes.TIME,
+//     endTime: DataTypes.TIME,
+//     notes: DataTypes.STRING,
+//     userId: DataTypes.INTEGER
+// };
 
 module.exports = function () {
     // Get All Events

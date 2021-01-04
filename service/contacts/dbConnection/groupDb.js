@@ -1,7 +1,7 @@
 const Group = require("../../../model");
-const groupObj = {
-  groupName: req.body.groupName
-}
+// const groupObj = {
+//   groupName: req.body.groupName
+// }
 
 module.exports = function () {
   // Get All Groups

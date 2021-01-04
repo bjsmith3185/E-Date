@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const eventDb = require("../../../service/events/dbConnection/eventDb");
+const eventDb = require("../../service/events/dbConnection/eventDb");
 
 // Events routes
 
