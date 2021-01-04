@@ -17,14 +17,16 @@ const contactObj = {
 module.exports = function () {
   // Get All Contacts
   async function getAllContacts() {
-    const contacts = await Contact.findAll();
-    return contacts;
+    const allContacts = await Contact.findAll();
+    return allContacts;
   }
-  //Add Contact
+
+  // Add Contact
   async function addContact(contactObj) {
-    const contact = await Contact.create(contactObj);
-    return contact;
+    const newContact = await Contact.create(contactObj);
+    return newContact;
   }
+
   // Get Contact By ID
   async function getContact(id) {
     const contact = await Contact.findAll({
@@ -32,6 +34,7 @@ module.exports = function () {
     });
     return contact;
   }
+
   // Edit Contact
   async function editContact(id, {body}) {
     // passing in {body} in update method
@@ -41,6 +44,7 @@ module.exports = function () {
     });
     return updatedContact;
   }
+
   // Delete Contact
   async function deleteContact(id) {
     // deleting all contact info where id matches req.params.id
