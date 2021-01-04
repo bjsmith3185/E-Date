@@ -23,20 +23,20 @@ router.route("/")
     res.send(allContacts);
 
     // res.json({ "request": "you requested all contacts" });
-  })
-    //Should we add a function to catch error here?
+  });
+    //Should we add a function to catch error here? ///////////////////////////////
 
 // Add contact route
 router.route("/")
   .post((req, res) => {
-    console.log("this is the contact we want to add");
+    console.log("this is the contact we want to add: ");
     console.log(req.body);
     // import service/contacts/dbConnections/contactDB.js
     // this next line will put the contact into the database
     const newCon = contactDb.addContact();
 
     console.log("contact response from database");
-    console.log(newContact);
+    console.log("New contact added: " + newContact);
 
     // return the contact from the database to the front end
     res.send(newContact);
@@ -52,6 +52,7 @@ router.route("/:id")
     res.json({ "request": "you requested contact by id: " + req.params.id });
 
     // return requested contact from database to front end
+    console.log("Contact retreived: " + contact + "with ID: " + req.params.id)
     res.send(contact)
   });
 

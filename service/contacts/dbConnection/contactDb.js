@@ -10,9 +10,10 @@ const contactObj = {
   comments: req.body.comments,
   city: req.body.city,
   state: req.body.state,
-  zipCode: req.body.zipCode,
-  userId: req.body.userId
+  zipCode: req.body.zipCode
 };
+// ,
+//   userId: req.body.userId
 
 module.exports = function () {
   // Get All Contacts

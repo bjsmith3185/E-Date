@@ -5,9 +5,10 @@ const eventObj = {
     endDate: DataTypes.DATE,
     startTime: DataTypes.TIME,
     endTime: DataTypes.TIME,
-    notes: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    notes: DataTypes.STRING
 };
+// ,
+//     userId: DataTypes.INTEGER
 
 module.exports = function () {
     // Get All Events
@@ -37,8 +38,8 @@ module.exports = function () {
         });
     }
     // Delete Event by ID
-    async function deleteEvent(id, {body}){
-        const deletedEvent = Event.destroy(id, {body},{
+    async function deleteEvent(id){
+        const deletedEvent = Event.destroy({
             where:{
                 id: req.params.id
             }
