@@ -7,12 +7,12 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Group.associate = function(model) {
+  // Group.associate = function(model) {
 
-    Group.hasOne(model.GroupWithContact, {
-      onDelete: "cascade"
-    });
-  };
+  //   Group.hasOne(model.GroupWithContact, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
 return Group;
 };

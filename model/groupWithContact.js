@@ -9,17 +9,17 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  GroupWithContact.associate = model => {
-    GroupWithContact.belongsTo(model.Group, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+  // GroupWithContact.associate = model => {
+  //   GroupWithContact.belongsTo(model.Group, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
 
-    GroupWithContact.hasMany(model.Contact, {
-      onDelete: "cascade"
-    });
-  };
+  //   GroupWithContact.hasMany(model.Contact, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   return GroupWithContact;
 };

@@ -1,60 +1,97 @@
-const Contact = require("../../../model");
-// const contactObj = {
-//   firstName: req.body.firstName,
-//   lastName: req.body.lastName,
-//   middleInitial: req.body.middleInitial,
-//   address: req.body.address,
-//   phone: req.body.phone,
-//   email: req.body.email,
-//   birthday: req.body.birthday,
-//   comments: req.body.comments,
-//   city: req.body.city,
-//   state: req.body.state,
-//   zipCode: req.body.zipCode,
-//   userId: req.body.userId
-// };
 
-module.exports = function () {
+const db = require("../../../model");
+
+
+module.exports = {
   // Get All Contacts
-  async function getAllContacts() {
-    const allContacts = await Contact.findAll();
-    return allContacts;
-  }
+  getAllContacts: function() {
+
+ // async function getAllContacts() {
+    db.Contact.findAll({})
+    .then(contacts => {
+      console.log(`Found ${contacts.length} matching records.`);
+      return contacts;
+    })
+    .catch(e => {
+      console.log("------------ an error occurred getting all contact ----------")
+      console.log(e);
+      return e;
+    });
+
+  },
 
   // Add Contact
-  async function addContact(contactObj) {
-    const newContact = await Contact.create(contactObj);
-    return newContact;
-  }
+  addContact: function(contactObj) {
+  //async function addContact(contactObj) {
+    // const newContact = db.Contact.create(contactObj);
+    db.Contact.create(contactObj)
+    .then(newUser => {
+      console.log(`New user ${newUser.name}, with id ${newUser.id} has been created.`);
+      return newUser;
+    })
+    .catch(e => {
+      console.log("------------ an error occurred adding a contact ----------")
+      console.log(e);
+      return e;
+    });
+   // return "error creating new contact";
+  },
 
   // Get Contact By ID
-  async function getContact(id) {
-    const contact = await Contact.findAll({
-      where: { id: req.params.id }
-    });
-    return contact;
-  }
+  getContact: function(id) {
+ // async function getContact(id) {
+    const contact = db.Contact.findOne(
+      {id: id }
+      )
+      .then(contact => {
+        console.log(`contact ${contact.name}, with id ${contact.id} has been retreived.`);
+        return contact;
+      })
+      .catch(e => {
+        console.log("------------ an error occurred getting a contact ----------")
+        console.log(e);
+        return e;
+      });
+  },
 
-  // Edit Contact
-  async function editContact(id, {body}) {
-    // passing in {body} in update method
-    // not passing id in update method because we're not updating the id
-    const updatedContact = await Contact.update({ body }, {
-      where: { id: req.params.id }
-    });
-    return updatedContact;
-  }
+  // // Edit Contact
+  // editContact: async function(id, body) {
+  // //async function editContact(id, {body}) {
 
-  // Delete Contact
-  async function deleteContact(id) {
-    // deleting all contact info where id matches req.params.id
-    // so do not have to pass anything in destroy method
-    const deletedContact = await Contact.destroy({
-      where: { id: req.params.id }
-    });
-    return deletedContact;
-  }
+  //   // passing in {body} in update method
+  //   // not passing id in update method because we're not updating the id
+  //   const updatedContact = db.Contact.update({ body }, {
+  //     where: { id: id }
+  //   });
+  //   return updatedContact;
+  // },
+
+  // // Delete Contact
+  // deleteContact: async function(id) {
+  // //async function deleteContact(id) {
+
+  //   // deleting all contact info where id matches req.params.id
+  //   // so do not have to pass anything in destroy method
+  //   const deletedContact = await Contact.destroy({
+  //     where: { id: id }
+  //   });
+  //   return deletedContact;
+  // }
+
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
   // // Edit Contact
   //   // We'll have to play around with this... 
