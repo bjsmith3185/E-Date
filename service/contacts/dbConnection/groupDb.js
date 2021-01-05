@@ -1,41 +1,91 @@
-const Group = require("../../../model");
-// const groupObj = {
-//   groupName: req.body.groupName
-// }
 
-module.exports = function () {
+const db = require("../../../model");
+
+module.exports = {
   // Get All Groups
-  async function getAllGroups() {
-    const groups = await Group.findAll();
-    return groups;
-  }
+  getAllGroups: function() {
+    db.Group.findAll({})
+    .then(groups => {
+      console.log(`Found ${groups.length} groups matching records.`);
+      return groups;
+    })
+    .catch(e => {
+      console.log("------------ an error occurred getting all groups ----------")
+      console.log(e);
+      return e;
+    });
+  },
+
   // Add Group
-  async function addGroup(groupObj) {
-    const group = await Group.create(groupObj);
-    return group;
-  }
+  addGroup: function(groupObj) {
+    db.Group.create(groupObj)
+    .then(newGroup => {
+      console.log(`New group ${newGroup.name}, with id ${newGroup.id} has been created.`);
+      return newGroup;
+    })
+    .catch(e => {
+      console.log("------------ an error occurred adding a newGroup ----------")
+      console.log(e);
+      return e;
+    });
+  },
+
   // Get Group by ID
-  async function getGroup(id) {
-    const group = await Group.findAll({
-      where: { id: req.params.id }
-    });
-    return group;
-  }
+  getGroupById: function(id) {
+    db.Group.findOne(
+      {id: id }
+      )
+      .then(group => {
+        console.log(`group ${group.name}, with id ${group.id} has been retreived.`);
+        return group;
+      })
+      .catch(e => {
+        console.log("------------ an error occurred getting a group ----------")
+        console.log(e);
+        return e;
+      });
+  },
   // Update Group
-  async function editGroup(id, { body }) {
-    const group = await Group.update({ body }, {
-      where: { id: req.params.id }
+  updateGroup: function(id, body) {
+    db.Group.findOne({
+      id: id
+    })
+    .then(group => {
+      group.updateAttributes(body)
+      .then(updatedGroup => {
+        console.log("the group was updated");
+        console.log(updatedGroup);
+        return updatedGroup
+      })
+      .catch(e => {
+        console.log("------------ an error occurred updating a group ----------")
+        console.log(e);
+        return e;
+      });
+    })
+    .catch(e => {
+      console.log("------------ an error occurred getting a group for updating ----------")
+      console.log(e);
+      return e;
     });
-    return group;
-  }
+
+  },
+
   // Delete Group
-  async function deleteGroup(id, { body }) {
-    const group = await Group.destroy(id, { body }, {
-      where: { id: req.body.id }
+  deleteGroup: function(id) {
+    db.Group.destory({
+      where: { id: id }
+    })
+    .then(deletedGroup => {
+      console.log(`Has it been deleted? 1 means yes, 0 means no: ${deletedGroup}`);
+      return deletedGroup;
     });
-    return group;
   }
 };
+
+
+
+
   // async function joinContactToGroup(contactId, groupId) {
   //   // find the user & project
   //   const contact = await Contact.findOne({ where: { id: contactId } });
