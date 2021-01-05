@@ -33,7 +33,7 @@ router.route("/")
     console.log(req.body);
     // import service/contacts/dbConnections/contactDB.js
     // this next line will put the contact into the database
-    const newCon = contactDb.addContact();
+    const newContact = contactDb.addContact(req.body);
 
     console.log("contact response from database");
     console.log(newContact);

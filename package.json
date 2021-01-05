@@ -13,6 +13,7 @@
     "exceljs": "^4.1.1",
     "express": "^4.17.1",
     "express-session": "^1.16.1",
+    "if-env": "^1.0.4",
     "js-file-download": "^0.4.12",
     "json2xls": "^0.1.2",
     "moment": "^2.27.0",
@@ -28,8 +29,7 @@
     "react-switch": "^5.0.1",
     "react-time-picker": "^4.0.1",
     "sequelize": "^5.22.3",
-    "styled-components": "^5.2.0",
-    "if-env": "^1.0.4"
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

@@ -16,13 +16,13 @@ module.exports = function (sequelize, DataTypes) {
     notes: DataTypes.STRING
   });
 
-  Contact.associate = model => {
-    Contact.belongsTo(model.GroupWithContact, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Contact.associate = model => {
+  //   Contact.belongsTo(model.GroupWithContact, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Contact;
 };
