@@ -5,6 +5,7 @@ const routes = require("./routes");
 const app = express();
 require('dotenv').config()
 const PORT = process.env.PORT || 3001;
+const db = require("./model");
 
 // Define middleware here
 app.use(bodyParser.json({limit:'50mb', extended: true }));
@@ -17,11 +18,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to SQL DB
-
-
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> E-Date Server now listening on PORT ${PORT}!`);
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
-
-

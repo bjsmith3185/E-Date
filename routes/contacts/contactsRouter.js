@@ -34,12 +34,25 @@ router.route("/")
     // import service/contacts/dbConnections/contactDB.js
     // this next line will put the contact into the database
     const newContact = contactDb.addContact(req.body);
-
     console.log("contact response from database");
     console.log(newContact);
 
-    // return the contact from the database to the front end
-    res.send(newContact);
+    // contactDb.addContact(req.body)
+    // .then(newContact => {
+    //   console.log("===== A new contact was created with Id: " + newContact.id);
+    //   console.log(newContact);
+    //   //res.send(newContact);
+    // })
+    // .catch(e => {
+    //   console.log("error happened");
+    //   console.log(e);
+    // })
+
+
+
+
+    // // return the contact from the database to the front end
+    // res.send(newContact);
   });
 
 // Get contact by ID
