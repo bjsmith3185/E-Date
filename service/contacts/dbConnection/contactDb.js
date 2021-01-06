@@ -26,7 +26,8 @@ module.exports = {
     // const newContact = db.Contact.create(contactObj);
     db.Contact.create(contactObj)
     .then(newUser => {
-      console.log(`New user ${newUser.name}, with id ${newUser.id} has been created.`);
+      console.log(`New user ${newUser.firstName}, with id ${newUser.id} has been created.`);
+      console.log(newUser);
       return newUser;
     })
     .catch(e => {
