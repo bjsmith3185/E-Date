@@ -1,0 +1,38 @@
+ADD NEW GROUP =================================
+Starts:
+        AddAddressGroup.js page = 
+            //FUNCTION TO GET ALL CONTACTS FOR GROUPS
+                API.getAddress2()
+            //FUNCTION TO GET ALL GROU
+            P getGroupNames
+                API.getGroupNames()
+
+
+        CREATE GROUP NAME -- "GROUPS"
+        =============================================
+            //FUNCTION TO CREATE NEW GROUP NAME    
+                API.createGroupName({
+
+                =============================================    
+                    groupName: groupName,
+                    userId: userId
+                =============================================
+                })
+                //AXIOS REQUEST
+                    axios.post("/api/CreateGroupName", userInfo);
+
+
+        CREATE GROUP -- "GROUP WITH CONTACTS"
+        =============================================
+            // FUNCTION TO ===CREATE GROUP=== WITH CONTACTS FROM CHECKBOX SELECTED CONTACTS
+                API.addGroup(groupList)
+
+                =============================================
+                
+                =============================================
+                    //AXIOS REQUEST = 
+                        axios.post(
+                            "/api/CreateGroup", userInfo);
+
+                            testing route ===== "http://localhost:3001/api/groups"
+ 

@@ -3,7 +3,7 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password":  "root",
+    "password":  "Chicago1!",
     "database": "edate_db",
     "host": "localhost",
     "dialect": "mysql"

@@ -1,3 +1,31 @@
+// WORKS //
+== ADD CONTACT
+
+// NEEDS WORK //
+
+== GROUPS
+Create group name - hitting route, logging group, but receiving error:
+    "Group.groupName cannot be null"
+
+== EVENTS
+Add new event - hitting route, logging event data but receiving error:
+    "eventDb.addEvent is not a function"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////FIX GROUPS///////////////
 Logout
 
