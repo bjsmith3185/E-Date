@@ -16,7 +16,7 @@ router.route("/")
     });
 // Add Event route
 router.route("/new")
-    .get((req, res) => {
+    .post((req, res) => {
         console.log("this is the event we want to add");
         console.log(req.body);
         res.send({ "response": req.body });
