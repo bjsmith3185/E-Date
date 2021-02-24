@@ -11,12 +11,19 @@ const groupDb = require("../../service/contacts/dbConnection/groupDb");
 router.route("/")
   .get((req, res) => {
     console.log("in the get groups route");
-    res.json({ "request": "you requested all groups" });
+   // res.json({ "request": "you requested all groups" });
 
-    const allGroups = groupDb.getAllGroups();
-    console.log(allGroups);
+    groupDb.getAllGroups()
+    .then(dbresults => {
+      console.log(dbresults);
+      res.json(dbresults)
+    })
+    .catch(e => {
+      console.log("error getting all groups");
+      console.log(e)
+      res.json({"status":e});
+    })
 
-    res.send(allGroups)
   });
 
 
@@ -25,20 +32,43 @@ router.route("/")
   .post((req, res) => {
     console.log("this is the group we want to add");
     console.log(req.body);
-    res.send({ "response": req.body })
+   // res.send({ "response": req.body })
 
-    const newGroup = groupDb.addGroup();
-    console.log(newGroup);
-
-    res.send(newGroup)
+   groupDb.addGroup(req.body)
+   .then(dbresults => {
+    console.log("response from adding a group");
+    console.log(dbresults);
+    res.json(dbresults)
+   })
+   .catch(e => {
+    console.log(" Error response from adding a group");
+    console.log(dbresults);
+    res.json({"status":e});
+   })
+  
   });
 
 // Get group by ID
 router.route("/:id")
   .get((req, res) => {
     console.log("in the get group by ID route");
-    res.json({ "request": "you requested group by id: " + req.params.id });
+
+    groupDb.getGroupById()
+    .then(dbresults => {
+      console.log("response from get group by ID");
+      console.log(dbresults);
+      res.json(dbresults)
+    })
+    .catch(e => {
+      console.log("Error response from get group by ID");
+      console.log(dbresults);
+      res.json({"status":e});
+    })
   });
+
+
+
+
 
 // Update group by id
 router.route("/:id")
